@@ -1,5 +1,6 @@
 package com.sumesh.scoreapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -20,6 +21,15 @@ public class MainActivity extends AppCompatActivity {
         Button minus = findViewById(R.id.btn_minus);
         TextView result = findViewById(R.id.result_tv);
 
+        //third edit
+        //to check for savedInstanceState value
+        if(savedInstanceState!=null && savedInstanceState.containsKey("KEY")){
+            count =savedInstanceState.getInt("KEY");
+            result.setText(String.valueOf(count));
+        }
+
+        //first edit
+
         // todo 1: recognize or listen to button clicks
         // todo 2: Based on the button, update the value of textview
 
@@ -29,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 //when the btn_plus cliked we will come here
                 count++;
                 result.setText(String.valueOf(count));
+
 
             }
         });
@@ -41,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
             count--;
             result.setText(String.valueOf(count));
         });
+    }
+
+    //second edit
+    //whatever value you want to store you can store with outState Bundle object
+    //Bundle is a class that offer a data structure to store values along with keys
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("KEY",count);
     }
 }
 /**

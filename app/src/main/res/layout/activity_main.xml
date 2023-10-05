@@ -10,14 +10,14 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:text="Plus"
         android:layout_weight="1"
         android:id="@+id/btn_plus"
         />
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:text="0"
         android:textSize="100sp"
         android:textStyle="bold"
@@ -30,7 +30,7 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:text="Minus"
         android:layout_weight="1"
         android:id="@+id/btn_minus"
